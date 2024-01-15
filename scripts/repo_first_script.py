@@ -22,13 +22,13 @@ class FilteringClass:
 
 def load_dataset(filename):
     """
-    Function to load dataset in pandas
+    Function to load dataset
     """
-    extension = filename.rsplit('.')[-1]
-    if extension != 'csv':
-        raise TypeError("The file needs to be a csv")
-
-    return pd.read_csv(filename)
+    extension = filename.rsplit('.', 1)[-1]
+    if extension == "csv":
+        return pd.read_csv(filename)
+    else:
+        raise TypeError(f"The extension is {extension} and not csv. Try again")
 
 
 @click.command(short_help="Parser to import dataset")
@@ -37,7 +37,7 @@ def main(input_file):
     """
     Main Function
     """
-    df = pd.read_csv(input_file)
+    df = load_dataset(input_file)
 
     result = FilteringClass(df).filter_price(12)
     print(result.shape)
