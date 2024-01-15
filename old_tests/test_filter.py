@@ -15,5 +15,6 @@ class TestFilteringClass(unittest.TestCase):
         result = FilteringClass(df).filter_price(12)
         self.assertEqual(result.shape, (2, 1))  # Adjust the shape based on your expected output
 
-# if __name__ == "__main__":
-#     unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

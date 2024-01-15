@@ -20,6 +20,17 @@ class FilteringClass:
         return self.df[self.df["Price Starting With ($)"] < price]
 
 
+def load_dataset(filename):
+    """
+    Function to load dataset in pandas
+    """
+    extension = filename.rsplit('.')[-1]
+    if extension != 'csv':
+        raise TypeError("The file needs to be a csv")
+
+    return pd.read_csv(filename)
+
+
 @click.command(short_help="Parser to import dataset")
 @click.option("-i", "--input_file", help="Input a file")
 def main(input_file):
