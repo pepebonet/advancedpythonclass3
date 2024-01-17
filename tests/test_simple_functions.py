@@ -4,6 +4,7 @@ Script to write the test for the sum and subtract functions
 import unittest
 import numpy as np
 import scripts.simple_functions as sf
+
 # from scripts.simple_functions import sum_two_nums, sub_two_nums
 
 

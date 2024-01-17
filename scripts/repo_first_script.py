@@ -1,11 +1,12 @@
 """
 Script to make updates in github
 """
+# pylint: disable=E1120
 import sys
 import click
 import pandas as pd
-sys.path.append('scripts')
 from filtering import FilteringClass
+sys.path.append('scripts')
 
 
 def load_dataset(filename):
@@ -15,8 +16,8 @@ def load_dataset(filename):
     extension = filename.rsplit('.', 1)[-1]
     if extension == "csv":
         return pd.read_csv(filename)
-    else:
-        raise TypeError(f"The extension is {extension} and not csv. Try again")
+
+    raise TypeError(f"The extension is {extension} and not csv. Try again")
 
 
 @click.command(short_help="Parser to import dataset")
