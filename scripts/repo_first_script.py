@@ -5,8 +5,8 @@ Script to make updates in github
 import sys
 import click
 import pandas as pd
-from filtering import FilteringClass
 sys.path.append('scripts')
+from filtering import FilteringClass
 
 
 def load_dataset(filename):
