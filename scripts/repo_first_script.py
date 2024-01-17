@@ -30,6 +30,7 @@ def main(input_file):
 
     result = FilteringClass(df).filter_price(12)
     print(result.shape)
+    print('Testing is no fun')
 
 
 if __name__ == "__main__":
