@@ -1,9 +1,11 @@
 """
 Script to make updates in github
 """
+import sys
 import click
 import pandas as pd
-import filtering as f
+sys.path.append('scripts')
+from filtering import FilteringClass
 
 
 def load_dataset(filename):
@@ -25,7 +27,7 @@ def main(input_file):
     """
     df = load_dataset(input_file)
 
-    result = f.FilteringClass(df).filter_price(12)
+    result = FilteringClass(df).filter_price(12)
     print(result.shape)
 
 
