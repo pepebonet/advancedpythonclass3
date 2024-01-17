@@ -1,7 +1,6 @@
 """
 Test filtering the dataset
 """
-import sys
 import unittest
 import pandas as pd
 from scripts.filtering import FilteringClass
