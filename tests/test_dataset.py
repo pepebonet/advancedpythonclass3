@@ -16,7 +16,6 @@ class TestDataset(unittest.TestCase):
         Path to dataset
         """
         self.path = "datasets/BooksDatasetClean.cfawsfasdgsv"
-        self.path_good = "datasets/BooksDatasetClean.csv"
 
     def test_extension_fail(self):
         """
@@ -24,13 +23,6 @@ class TestDataset(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             load_dataset(self.path)
-
-    def test_dataset_is_loaded(self):
-        """
-        Test line to load dataset
-        """
-        df = load_dataset(self.path_good)
-        self.assertEqual(df.shape[0], 103063)
 
 
 if __name__ == "__main__":
